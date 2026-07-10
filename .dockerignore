@@ -1,0 +1,40 @@
+# Dependencies & build artifacts (rebuilt inside the image)
+node_modules
+.svelte-kit
+build
+
+# Version control & CI/CD
+.git
+.github
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Documentation
+docs
+README.md
+AGENTS.md
+
+# Dev tooling & editor config
+eslint.config.js
+.vscode
+.cursor
+opencode.json
+components.json
+
+# Alternate package manager lockfile (Docker uses npm)
+bun.lock
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# OS & misc
+.gitignore
+.DS_Store
+Thumbs.db
+*.log
+npm-debug.log*
