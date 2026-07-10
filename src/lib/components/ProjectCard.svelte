@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { ArrowRight } from '@lucide/svelte';
+	import { resolve } from '$app/paths';
 	import type { ProjectPost } from '$lib/utils';
 
 	interface Props {
@@ -10,7 +11,7 @@
 </script>
 
 <a
-	href="/blog/{post.slug}"
+	href={resolve(`/blog/${post.slug}`)}
 	class="group relative flex flex-col rounded-lg border border-border p-6 transition-colors hover:bg-accent"
 >
 	<div class="flex items-start justify-between">
