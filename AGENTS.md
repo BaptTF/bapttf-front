@@ -85,8 +85,9 @@ En CI/deploy, elles sont injectées via Docker build-args / GitHub vars.
 3. Respecter Svelte 5 (runes) et les patterns existants du repo.
 4. Ne pas élargir le scope : pas de refacto / docs non demandés.
 5. Ne pas committer / push sans demande explicite.
-6. Préserver le design et les conventions déjà en place (pas de redesign gratuit).
-7. **Un sujet = un commit** : ne pas mélanger fix CI, docs agents, et contenu blog.
+6. **Ne committer que ce que tu as modifié toi-même dans la session.** Les fichiers déjà dirty / WIP de l’utilisateur (ex. article inachevé) restent hors du commit, même s’ils apparaissent dans `git status`.
+7. Préserver le design et les conventions déjà en place (pas de redesign gratuit).
+8. **Un sujet = un commit** : ne pas mélanger fix CI, docs agents, et contenu blog.
 
 ## Conventions de commit
 
@@ -117,11 +118,13 @@ Exemples (d’après l’historique) :
 
 Règles pour les agents :
 
+- **Committer uniquement les fichiers que tu as changés** dans cette session. Ne jamais inclure du travail préexistant, non fini, ou hors scope — même si l’utilisateur dit « commit » sans lister les fichiers : stage explicitement (`git add <paths>`), jamais un `git add .` / `-A` aveugle.
+- Si un fichier dirty n’est pas le tien : le laisser tel quel, ne pas le committer, ne pas le `restore`.
 - **Séparer** les commits par intention (ex. fix check ≠ docs ≠ article).
 - Message en **1 ligne**, impératif, sans point final.
 - Ne **pas** amend / force-push sauf demande explicite.
 - Ne **pas** committer secrets (`.env`, credentials, etc.).
-- Après commit : vérifier avec `git status`.
+- Après commit : vérifier avec `git status` que seuls les bons fichiers sont partis.
 
 ## Svelte MCP
 
