@@ -200,7 +200,7 @@
 	tabindex="0"
 >
     <!-- Terminal header -->
-    <div class="relative flex items-center border-b border-border/50 bg-zinc-900 px-4 py-2">
+    <div class="flex items-center gap-2 border-b border-border/50 bg-zinc-900 px-3 py-2 sm:px-4">
         <!-- Status (gauche) -->
         <div class="shrink-0">
             {#if connected}
@@ -210,13 +210,13 @@
             {/if}
         </div>
 
-        <!-- Titre (centre) -->
-        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <!-- Titre (centre, tronqué si manque de place) -->
+        <div class="min-w-0 flex-1 truncate text-center">
             <span class="text-xs text-muted-foreground">baptiste@bapttf.com:~</span>
         </div>
 
         <!-- Boutons de fenêtre (droite) -->
-        <div class="ml-auto flex items-center gap-1">
+        <div class="flex shrink-0 items-center gap-1">
             <div class="inline-flex h-6 w-6 items-center justify-center rounded text-zinc-500 transition-colors hover:bg-zinc-700 hover:text-zinc-200" title="Minimize">
                 <svg width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="0" y1="5" x2="10" y2="5"/></svg>
             </div>
