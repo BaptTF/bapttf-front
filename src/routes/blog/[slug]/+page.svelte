@@ -15,11 +15,10 @@
 	<header class="mb-8 not-prose">
 		<a href={resolve('/blog')} class="text-sm text-muted-foreground hover:text-foreground">← Retour au blog</a>
 		<h1 class="mt-4 text-3xl font-bold tracking-tight">{data.meta.title}</h1>
-		<div class="mt-2 flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
-			<time>{data.meta.date}</time>
+		<div class="mt-2 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-muted-foreground">
+			<time class="shrink-0">{data.meta.date}</time>
 			{#if data.meta.tags}
-				<span>·</span>
-				<div class="flex gap-2">
+				<div class="flex min-w-0 flex-wrap gap-2">
 					{#each data.meta.tags as tag (tag)}
 						<span class="rounded-full bg-secondary px-2 py-0.5 text-xs">{tag}</span>
 					{/each}
