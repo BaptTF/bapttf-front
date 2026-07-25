@@ -18,7 +18,7 @@
 				<Github class="size-5" />
 			</a>
 			<a
-				href="https://linkedin.com"
+				href="https://www.linkedin.com/in/baptistejullien/"
 				target="_blank"
 				rel="noopener noreferrer"
 				class="text-muted-foreground hover:text-foreground transition-colors"
@@ -27,7 +27,7 @@
 				<Linkedin class="size-5" />
 			</a>
 			<a
-				href="mailto:contact@example.com"
+				href="mailto:baptiste.jullien@proton.me"
 				class="text-muted-foreground hover:text-foreground transition-colors"
 				aria-label="Email"
 			>
