@@ -121,3 +121,17 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Markdown tables: scroll horizontally on narrow viewports */
+.prose :where(.table-scroll) {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.prose :where(.table-scroll) > :where(table) {
+  margin-top: 0;
+  margin-bottom: 0;
+}

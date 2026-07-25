@@ -27,7 +27,7 @@
 <div class="min-h-screen flex flex-col">
     <Navbar />
 
-    <main class="mx-auto max-w-5xl px-6 pt-24 pb-16 grow w-full">
+    <main class="mx-auto max-w-5xl px-6 pt-24 pb-16 grow w-full min-w-0">
         {@render children()}
     </main>
 
