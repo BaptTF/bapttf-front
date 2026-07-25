@@ -4,12 +4,12 @@ Site perso (portfolio, blog, terminal) en **SvelteKit** exporté en statique.
 
 ## Stack
 
-- **Runtime / package manager** : Bun (pas npm/pnpm pour le quotidien)
+- **Runtime / package manager** : Bun partout (local, CI, Docker) — lockfile : `bun.lock` uniquement
 - **Framework** : Svelte 5 + SvelteKit 2 + TypeScript
 - **UI** : Tailwind CSS 4, shadcn-svelte (`components.json`)
 - **Contenu** : Markdown via mdsvex (`src/posts/*.md`)
 - **Build** : `@sveltejs/adapter-static` → dossier `build/`
-- **Prod** : Docker + `static-web-server`, image GHCR, deploy via CI
+- **Prod** : Docker (`oven/bun` → `bun install --frozen-lockfile` → `bun run build`) + `static-web-server`, image GHCR, deploy via CI
 
 ## Commandes (alignées sur la CI)
 

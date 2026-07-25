@@ -24,8 +24,8 @@ eslint.config.js
 opencode.json
 components.json
 
-# Alternate package manager lockfile (Docker uses npm)
-bun.lock
+# Alternate package manager lockfile (Docker uses bun)
+package-lock.json
 
 # Secrets
 .env
@@ -38,3 +38,4 @@ bun.lock
 Thumbs.db
 *.log
 npm-debug.log*
+

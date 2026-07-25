@@ -1,7 +1,7 @@
-FROM node:22-alpine AS builder
+FROM oven/bun:1-alpine AS builder
 WORKDIR /app
-COPY package.json package-lock.json ./
-RUN npm ci
+COPY package.json bun.lock ./
+RUN bun install --frozen-lockfile
 COPY . .
 
 ARG PUBLIC_API_URL=http://localhost:1323/api/v1
@@ -9,7 +9,7 @@ ARG PUBLIC_WS_URL=ws://localhost:1323/ws/terminal
 ENV PUBLIC_API_URL=$PUBLIC_API_URL
 ENV PUBLIC_WS_URL=$PUBLIC_WS_URL
 
-RUN npm run build
+RUN bun run build
 
 FROM ghcr.io/static-web-server/static-web-server:2-alpine
 COPY --from=builder /app/build /var/public
