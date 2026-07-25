@@ -1,6 +1,6 @@
 ---
 title: "Mon infrastructure K3S : architecture et choix techniques"
-date: "2026-07-13"
+date: "2026-07-24"
 tags: ["k3s", "gitops", "argocd", "self-hosting", "infrastructure"]
 project:
   slug: vps-infra
