@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Baptiste JULLIEN">
+  <rect width="1200" height="630" fill="#121826"/>
+
+  <!-- Favicon mark, scaled from 32×32 -->
+  <g transform="translate(180 175) scale(8.75)">
+    <rect width="32" height="32" rx="8" fill="#f4f6f8"/>
+    <path
+      fill="#121826"
+      d="M9 7h8.2c3.35 0 5.55 1.85 5.55 4.55 0 1.85-.95 3.25-2.55 3.95v.1c2 .7 3.25 2.3 3.25 4.5 0 3.1-2.4 5.15-6.05 5.15H9V7zm3.35 3.05v4.7h4.55c1.55 0 2.45-.85 2.45-2.3s-.9-2.4-2.5-2.4h-4.5zm0 7.55v5.3h5.1c1.75 0 2.8-.95 2.8-2.6s-1.05-2.7-2.85-2.7h-5.05z"
+    />
+  </g>
+
+  <text
+    x="520"
+    y="300"
+    fill="#f4f6f8"
+    font-family="Source Sans Pro, DejaVu Sans, sans-serif"
+    font-size="64"
+    font-weight="700"
+    letter-spacing="-1.5"
+  >Baptiste JULLIEN</text>
+  <text
+    x="520"
+    y="365"
+    fill="#9aa3b2"
+    font-family="Source Sans Pro, DejaVu Sans, sans-serif"
+    font-size="30"
+    font-weight="400"
+  >Linux &#8594; NixOS &#8594; APIs &#8594; k8s</text>
+</svg>

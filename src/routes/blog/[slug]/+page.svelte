@@ -7,10 +7,6 @@
 	let Post = $derived(data.content);
 </script>
 
-<svelte:head>
-	<title>{data.meta.title} - Baptiste</title>
-</svelte:head>
-
 <article class="prose prose-neutral max-w-none dark:prose-invert">
 	<header class="mb-8 not-prose">
 		<a href={resolve('/blog')} class="text-sm text-muted-foreground hover:text-foreground">← Retour au blog</a>

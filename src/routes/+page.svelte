@@ -7,10 +7,6 @@
     let { data }: { data: PageData } = $props();
 </script>
 
-<svelte:head>
-    <title>Baptiste</title>
-</svelte:head>
-
 <!-- Hero -->
 <section class="flex min-h-[40vh] flex-col justify-center">
     <h1

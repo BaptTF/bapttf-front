@@ -24,7 +24,7 @@ export interface Post {
 	title: string;
 	date: string;
 	tags: string[];
-	excerpt?: string;
+	excerpt: string;
 	project?: ProjectMeta;
 }
 
@@ -49,6 +49,43 @@ interface PostModule {
 	};
 }
 
+function stripMarkdown(raw: string): string {
+	return raw
+		.replace(/^---[\s\S]*?---\r?\n/, '')
+		.replace(/```[\s\S]*?```/g, '')
+		.replace(/`([^`]+)`/g, '$1')
+		.replace(/!\[([^\]]*)\]\([^)]+\)/g, '')
+		.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+		.replace(/^#{1,6}\s+/gm, '')
+		.replace(/^\s*[-*+]\s+/gm, '')
+		.replace(/^\s*\d+\.\s+/gm, '')
+		.replace(/^\s*>\s?/gm, '')
+		.replace(/[*_~|]/g, '')
+		.replace(/\s+/g, ' ')
+		.trim();
+}
+
+export function excerptFromMarkdown(raw: string, maxLength = 180): string {
+	const text = stripMarkdown(raw);
+	if (text.length <= maxLength) return text;
+
+	const cut = text.slice(0, maxLength);
+	const lastSpace = cut.lastIndexOf(' ');
+	const snippet = (lastSpace > 80 ? cut.slice(0, lastSpace) : cut).trimEnd();
+	return `${snippet}…`;
+}
+
+const rawPosts = import.meta.glob('/src/posts/*.md', {
+	eager: true,
+	query: '?raw',
+	import: 'default'
+}) as Record<string, string>;
+
+export function getPostExcerpt(slug: string): string {
+	const entry = Object.entries(rawPosts).find(([path]) => path.endsWith(`/${slug}.md`));
+	return entry ? excerptFromMarkdown(entry[1]) : '';
+}
+
 export function getPosts(): Post[] {
 	const modules = import.meta.glob('/src/posts/*.md', { eager: true });
 	const posts: Post[] = [];
@@ -62,6 +99,7 @@ export function getPosts(): Post[] {
 			title: meta.title,
 			date: meta.date,
 			tags: meta.tags ?? [],
+			excerpt: getPostExcerpt(slug),
 			project: meta.project
 		});
 	}
